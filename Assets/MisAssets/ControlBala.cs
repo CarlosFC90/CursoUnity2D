@@ -5,7 +5,7 @@ using UnityEngine;
 public class ControlBala : MonoBehaviour {
 
 	public float speed = 6;
-	public float lifeTime = 2;
+	public float lifeTime = 6;
 	public Vector3 direction = new Vector3(-1, 0, 0);
 
 	Vector3 stepVector;

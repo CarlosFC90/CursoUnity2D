@@ -13,16 +13,42 @@ public class ControlPersonaje : MonoBehaviour {
 	public Text txt;
 
 	public int energy = 100;
+
+	bool inFire1 = false;
+	public GameObject hacha = null;
+
+	public int CostoGolpeAlAire = 1;
 	
 	void Start () {
 		rgb = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
+		hacha = GameObject.Find("/orc (1)/orc_body/orc _R_arm/orc _R_hand/orc_weapon");
 	}
 
 	void Update()
 	{
+        if (Mathf.Abs(Input.GetAxis("Fire1")) > 0.01f)
+        {
+            if (inFire1 == false)
+            {
+				inFire1 = true;
+				hacha.GetComponent<CircleCollider2D>().enabled = false;
+				anim.SetTrigger("attack");
+				energy -= CostoGolpeAlAire;
+			}
+        }
+        else
+        {
+			inFire1 = false;
+        }
+
 		slider.value = energy;
 		txt.text = energy.ToString();
+	}
+
+	public void HabilitarTriggerHacha()
+    {
+		hacha.GetComponent<CircleCollider2D>().enabled = true;
 	}
 
 

@@ -51,7 +51,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\HabilitarTriggerDespuesDeAtacar.cs" />
      <Compile Include="Assets\MisAssets\ControlBala.cs" />
+     <Compile Include="Assets\MisAssets\ControlDisparar.cs" />
+     <Compile Include="Assets\MisAssets\ControlHacha.cs" />
      <Compile Include="Assets\MisAssets\ControlOrc.cs" />
      <Compile Include="Assets\MisAssets\ControlPersonaje.cs" />
      <Compile Include="Assets\MisAssets\EnemyControl.cs" />
