@@ -41,8 +41,8 @@ public class ControlDisparar : MonoBehaviour {
 	void Disparar()
     {
         GameObject bulletCopy = Instantiate(bulletPrototype);
-        bulletCopy.transform.position = new Vector3( transform.parent.position.x, transform.parent.position.y, 0);
-        bulletCopy.GetComponent<ControlBala>().direction = new Vector3(transform.localScale.x, 0, 0);
+        bulletCopy.transform.position = new Vector3( transform.parent.position.x, transform.parent.position.y, -1f);
+        bulletCopy.GetComponent<ControlBala>().direction = new Vector3(transform.parent.localScale.x, 0, 0);
 
     }
 }

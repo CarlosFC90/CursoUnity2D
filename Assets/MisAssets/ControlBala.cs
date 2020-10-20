@@ -19,7 +19,7 @@ public class ControlBala : MonoBehaviour {
 	
 	
 	void FixedUpdate () {
-		rb.velocity = stepVector;
+		rb.velocity = -stepVector;
 	}
 
 	private void OnTriggerEnter2D( Collider2D other )

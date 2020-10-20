@@ -9,20 +9,20 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1275743654678710}
+  m_RootGameObject: {fileID: 1427681537733562}
   m_IsPrefabParent: 1
---- !u!1 &1275743654678710
+--- !u!1 &1427681537733562
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4290661902719630}
-  - component: {fileID: 96607312302201294}
-  - component: {fileID: 58652895412997674}
-  - component: {fileID: 114698156577586948}
-  - component: {fileID: 50614051115438138}
+  - component: {fileID: 4393456527169708}
+  - component: {fileID: 96618308586052066}
+  - component: {fileID: 58953462190886540}
+  - component: {fileID: 114454837091437898}
+  - component: {fileID: 50109044399384772}
   m_Layer: 11
   m_Name: Bala
   m_TagString: Untagged
@@ -30,26 +30,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4290661902719630
+--- !u!4 &4393456527169708
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1275743654678710}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.71, y: -1.72, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_GameObject: {fileID: 1427681537733562}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.7630444, y: -1.6571746, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50614051115438138
+--- !u!50 &50109044399384772
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1275743654678710}
+  m_GameObject: {fileID: 1427681537733562}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -57,18 +57,18 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
---- !u!58 &58652895412997674
+--- !u!58 &58953462190886540
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1275743654678710}
+  m_GameObject: {fileID: 1427681537733562}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -78,17 +78,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.09
---- !u!96 &96607312302201294
+--- !u!96 &96618308586052066
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1275743654678710}
+  m_GameObject: {fileID: 1427681537733562}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -112,8 +112,8 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Time: 5
+  m_SortingOrder: 0
+  m_Time: 0.05
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.125
@@ -131,15 +131,15 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.75294125, g: 0.75294125, b: 0.75294125, a: 1}
-      key1: {r: 0.7794118, g: 0.183391, b: 0.183391, a: 1}
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 45875
+      ctime0: 0
       ctime1: 65535
       ctime2: 0
       ctime3: 0
@@ -165,17 +165,17 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
---- !u!114 &114698156577586948
+--- !u!114 &114454837091437898
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1275743654678710}
+  m_GameObject: {fileID: 1427681537733562}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf1708adba43ea54ea2e6ea65e49e2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  lifeTime: 2
+  lifeTime: 6
   direction: {x: -1, y: 0, z: 0}

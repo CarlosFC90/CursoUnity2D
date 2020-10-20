@@ -14,6 +14,8 @@ public class EnemyControl : MonoBehaviour {
 
 	public int energy = 100;
 
+	public GameObject bulletPrototype;
+
 	void Start()
 	{
 		rgb = GetComponent<Rigidbody2D>();
@@ -37,7 +39,7 @@ public class EnemyControl : MonoBehaviour {
 		Vector2 v = new Vector2(vel, 0);
 		rgb.velocity = v;
 
-		if (anim.GetCurrentAnimatorStateInfo(0).IsName("Caminando") && Random.value < 1f/ (60f * 3f))
+		if (anim.GetCurrentAnimatorStateInfo(0).IsName("Caminar") && Random.value < 1f/ (60f * 3f))
 		{
 			anim.SetTrigger("Apuntar");
 		}
@@ -70,15 +72,15 @@ public class EnemyControl : MonoBehaviour {
 
 	public void Disparar()
     {
-		anim.SetTrigger("apuntar");
+		anim.SetTrigger("Apuntar");
     }
 
-	//public void EmitirBala()
- //   {
-	//	GameObject bulletCopy = Instantiate(bulletPrototype);
-	//	bulletCopy.transform.position = new Vector3(transform.position.x, transform.position.y, -1f);
-	//	bulletCopy.GetComponent<ControlBala>().direction = new Vector3(transform.localScale.x, 0, 0);
+    public void EmitirBala()
+    {
+        GameObject bulletCopy = Instantiate(bulletPrototype);
+        bulletCopy.transform.position = new Vector3(-1f, transform.position.y, -1f);
+        bulletCopy.GetComponent<ControlBala>().direction = new Vector3(transform.localScale.x, 0, 0);
 
-	//	energy--;
- //   }
+        energy--;
+    }
 }
