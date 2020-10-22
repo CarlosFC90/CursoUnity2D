@@ -24,6 +24,12 @@ public class ControlBala : MonoBehaviour {
 
 	private void OnTriggerEnter2D( Collider2D other )
     {
+        if (other.gameObject.name.Equals("orc (1)"))
 
+		{
+			ControlPersonaje crt = other.gameObject.GetComponent<ControlPersonaje>();
+			if (crt != null) crt.RecibirBala();
+			Destroy(gameObject);
+        }
     }
 }

@@ -18,6 +18,12 @@ public class ControlPersonaje : MonoBehaviour {
 	public GameObject hacha = null;
 
 	public int CostoGolpeAlAire = 1;
+
+	public bool jumping = false;
+	public float yJumpForce = 300;
+	Vector2 JumpForce;
+
+	public int costoBala = 20;
 	
 	void Start () {
 		rgb = GetComponent<Rigidbody2D>();
@@ -27,7 +33,18 @@ public class ControlPersonaje : MonoBehaviour {
 
 	void Update()
 	{
-        if (Mathf.Abs(Input.GetAxis("Fire1")) > 0.01f)
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Muriendo"))
+        {
+			if (energy <= 0)
+			{
+				energy = 0;
+				anim.SetTrigger("morir");
+			}
+        }
+		else
+			return;
+
+		if (Mathf.Abs(Input.GetAxis("Fire1")) > 0.01f)
         {
             if (inFire1 == false)
             {
@@ -72,6 +89,21 @@ public class ControlPersonaje : MonoBehaviour {
 			Flip();
         }
 
+        if (Input.GetAxis("Jump") > 0.01f)
+        {
+            if (!jumping)
+            {
+				jumping = true;
+				JumpForce.x = 0f;
+				JumpForce.y = yJumpForce;
+				rgb.AddForce(JumpForce);
+            }
+        }
+		else
+        {
+			jumping = false;
+        }
+
 	}
 	void Flip()
 	{
@@ -79,4 +111,9 @@ public class ControlPersonaje : MonoBehaviour {
 		s.x *= -1;
 		transform.localScale = s;
 	}
+
+	public void RecibirBala()
+    {
+		energy -= costoBala;
+    }
 }

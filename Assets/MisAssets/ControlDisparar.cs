@@ -6,10 +6,10 @@ public class ControlDisparar : MonoBehaviour {
 	Collider2D disparandoO = null;
 	public float probabilidadDeDisparo = 1f;
 
-    public GameObject bulletPrototype;
+    EnemyControl crt;
 	
 	void Start () {
-		
+        crt = GameObject.Find("Enemy").GetComponent<EnemyControl>();
 	}
 	
 	
@@ -17,7 +17,8 @@ public class ControlDisparar : MonoBehaviour {
     {
         if (other.gameObject.name.Equals("orc (1)") && disparandoO == null)
         {
-			DecidaSiDispara(other);
+            Disparar();
+            disparandoO = other;
         }
     }
 	
@@ -40,9 +41,6 @@ public class ControlDisparar : MonoBehaviour {
 
 	void Disparar()
     {
-        GameObject bulletCopy = Instantiate(bulletPrototype);
-        bulletCopy.transform.position = new Vector3( transform.parent.position.x, transform.parent.position.y, -1f);
-        bulletCopy.GetComponent<ControlBala>().direction = new Vector3(transform.parent.localScale.x, 0, 0);
-
+        crt.Disparar();
     }
 }

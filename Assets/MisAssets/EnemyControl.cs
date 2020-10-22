@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EnemyControl : MonoBehaviour {
 
-	public float vel = -1f;
+	public float vel = 1f;
 	Rigidbody2D rgb;
 	Animator anim;
 
@@ -65,9 +65,11 @@ public class EnemyControl : MonoBehaviour {
     {
 		vel *= -1;
 
-		var s = transform.localScale;
-		s.x *= -1;
-		transform.localScale = s;
+        var s = transform.localScale;
+        s.x *= -1;
+        transform.localScale = s;
+
+        //transform.Rotate(0f, 180f, 0f);
     }
 
 	public void Disparar()
@@ -78,9 +80,14 @@ public class EnemyControl : MonoBehaviour {
     public void EmitirBala()
     {
         GameObject bulletCopy = Instantiate(bulletPrototype);
-        bulletCopy.transform.position = new Vector3(-1f, transform.position.y, -1f);
+        bulletCopy.transform.position = new Vector3(transform.position.x, transform.position.y, -1f);
         bulletCopy.GetComponent<ControlBala>().direction = new Vector3(transform.localScale.x, 0, 0);
 
         energy--;
+    }
+
+	public void BajarPuntosPorOrcoCerca()
+    {
+		energy--;
     }
 }
